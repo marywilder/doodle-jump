@@ -1,0 +1,175 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #e8d0cc;
+}
+
+.grid {
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 50rem;
+    height: 75rem;
+    
+    background-image: url(./background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+    font-size: 25rem;
+    text-align: center;
+    font-family: 'Kranky', cursive;
+    font-family: 'Fuzzy Bubbles', cursive;
+    
+}
+
+h1 {
+    font-family: 'Kranky', cursive; 
+    font-size: 4.25rem;
+    padding-top: 10rem;
+    letter-spacing: 1.2rem;
+}
+
+.avatar-section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.avatars-container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 2.25rem;
+
+}
+
+.select-avatar {
+    justify-content: center;
+}
+
+.caption {
+    max-width: 10vh;
+}
+
+h2 {
+    font-size: 2.25rem;
+
+}
+
+.original-doodle, .floof, .jelly {
+    width: 9rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.original-doodle {
+    width: 8rem;
+    padding-top: 3rem;
+}
+
+
+
+.original-doodle:hover, .floof:hover, .jelly:hover {
+    cursor: pointer;
+    filter: brightness(50%);
+}
+
+.original-doodle:after, .floof:after {
+    filter: brightness(50%);
+}
+
+p {
+    font-size: 1.75rem;
+}
+
+.select-avatar {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#playbutton {
+    background-color: rgb(166, 208, 208, 0);
+    
+    font-family: 'Fuzzy Bubbles', cursive;
+   
+    padding: 1vw;
+    border: none;
+    color: #657288;
+    font-size: 2.5rem;
+    letter-spacing: .2rem;
+    border-radius: 3rem;
+}
+
+#playbutton:hover {
+    background-color: rgb(217, 180, 112);
+}
+
+.playbutton {
+    background-color: rgb(166, 208, 208, 0);
+    font-family: 'Fuzzy Bubbles', cursive;
+    max-width: 50vw;
+    padding: 1vw;
+    border: none;
+    color: rgb(121, 120, 132);
+    font-size: 4rem;
+    border-radius: 6rem;
+}
+
+.doodler {
+    width: 7.5rem;
+    height: 10.62rem;
+    background-image: url(./doodler-guy.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+}
+
+
+
+.platform {
+    width: 10.26rem;
+    height: 1.8rem;
+    
+    background-image: url(./platform.png);
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.platforms {
+    display: flex;
+    
+    justify-content: center;
+}
+
+.game-over {
+    position: relative;
+    align-self: center;
+    top: 30rem;
+    font-size: 5rem;
+    margin-top: 3rem;
+    transform: rotate(-15deg);
+    color: maroon;
+    letter-spacing: .5rem;
+}
+.score {
+    letter-spacing: .5rem;
+    position: relative;
+    font-size: 3rem;
+    padding: 6rem;
+    margin-top: 10rem;
+    top: 20rem;
+}
+
+.play-again-button {
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 3rem;
+    border: none;
+    bottom: 30rem;
+    background-color: rgb(135, 131, 245, 0);
+    color: rgb(37, 37, 37);
+    
+    position: relative;
+}
