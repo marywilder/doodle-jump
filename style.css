@@ -193,7 +193,7 @@ p {
 
 
 .left-png, .right-png, .straight-png { 
-    width: 1.5rem;
+    width: 10rem;
 }
 
 .left-png:hover, .right-png:hover, .straight-png:hover {
