@@ -173,3 +173,29 @@ p {
     
     position: relative;
 }
+
+.control-buttons {
+    display: flex;
+    flex-direction: row nowrap;
+    position: absolute;
+    top: 80rem;
+    
+}
+
+.control-buttons button {
+    width: 15rem;
+    height: 10rem;
+    background-color: rgb(121, 120, 132, 0 );
+    border: none;
+    
+}
+
+
+
+.left-png, .right-png, .straight-png { 
+    width: 12rem;
+}
+
+.left-png:hover, .right-png:hover, .straight-png:hover {
+    filter:hue-rotate(90deg);
+}

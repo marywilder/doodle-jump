@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let avatarSection = document.querySelector(".avatar-section")
     //platforms.classList.add("platforms")
     //score.classList.add('score')
-
+    
     //creates platforms
 
     class Platform {
@@ -192,6 +192,13 @@ function moveRight() {
         }
     }
 
+
+    document.querySelector(".left").addEventListener('click', moveLeft)
+
+    document.querySelector(".right").addEventListener('click', moveRight)
+
+    document.querySelector(".straight").addEventListener('click', moveStraight)
+
     //game over
 
     function gameOver() {
@@ -314,6 +321,6 @@ function moveRight() {
         
             
     //score.classList.add('score')      
-        
+    
     })
 
