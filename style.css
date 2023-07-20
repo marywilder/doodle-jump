@@ -26,15 +26,21 @@ body {
 }
 
 h1 {
-    font-family: 'Kranky', cursive; 
+    position: relative;
+    font-family: 'Fuzzy Bubbles', cursive; 
+    transform: rotate(-10deg);
     font-size: 4.25rem;
-    padding-top: 10rem;
+    top: 18rem;
     letter-spacing: 1.2rem;
+    color: maroon
 }
 
 .avatar-section {
+    position: relative;
     display: flex;
     flex-flow: column nowrap;
+    letter-spacing: .3rem;
+    top: 25rem;
 }
 
 .avatars-container {
@@ -89,10 +95,11 @@ p {
 }
 
 #playbutton {
+    position: relative;
     background-color: rgb(166, 208, 208, 0);
     
     font-family: 'Fuzzy Bubbles', cursive;
-   
+    top: 25rem;
     padding: 1vw;
     border: none;
     color: #657288;

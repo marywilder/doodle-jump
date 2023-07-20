@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0
     let startPoint = 18.75
     let doodlerBottomSpace = startPoint
-    let platformCount = 5
+    let platformCount = 6
     let platforms = []
     let upTimerId
     let downTimerId
