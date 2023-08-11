@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #e8d0cc;
+    background-color: #87719bb1;
 }
 
 .grid {
@@ -22,6 +22,7 @@ body {
     text-align: center;
     font-family: 'Kranky', cursive;
     font-family: 'Fuzzy Bubbles', cursive;
+    border: .25rem solid black;
     
 }
 
@@ -52,6 +53,7 @@ h1 {
 
 .select-avatar {
     justify-content: center;
+    font-weight: 700;
 }
 
 .caption {
@@ -102,9 +104,10 @@ p {
     top: 25rem;
     padding: 1vw;
     border: none;
-    color: #657288;
+    color: black;
+    font-weight: 700;
     font-size: 2.5rem;
-    letter-spacing: .2rem;
+    letter-spacing: .4rem;
     border-radius: 3rem;
 }
 
@@ -177,7 +180,8 @@ p {
     bottom: 30rem;
     background-color: rgb(135, 131, 245, 0);
     color: rgb(37, 37, 37);
-    
+    letter-spacing: .35rem;
+    font-weight: 600;
     position: relative;
 }
 
@@ -201,8 +205,20 @@ p {
 
 .left-png, .right-png, .straight-png { 
     width: 10rem;
+    background-color: rgba(84, 207, 135, 0.659);
 }
 
 .left-png:hover, .right-png:hover, .straight-png:hover {
-    filter:hue-rotate(90deg);
+    
+    background-color: rgb(213, 234, 148);
+}
+
+.left-png {
+    transform: rotate(-90deg);
+    
+    
+}
+
+.right-png {
+    transform: rotate(90deg);
 }
