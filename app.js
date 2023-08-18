@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const doodler = document.createElement('div')
+    let arrows = document.querySelectorAll('.arrow-controls')
     let isGameOver = false
     let doodlerLeftSpace = 6.25
     let score = 0
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let leftTimerId
     let rightTimerId
    
+
+    
+
     let playButton = document.getElementById("playbutton")
     let introPage = document.querySelector(".intro")
     let playAgain = document.querySelector(".play-again-button")
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-    
+    // creates in platform in array
     function createPlatforms() {
         for (let i = 0; i < platformCount; i++) {
             let platGap = 75 / platformCount
@@ -59,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let visual = platform.visual
                 visual.style.bottom = platform.bottom + 'rem'
 
+            //removes first platform as it reaches bottom
                 if (platform.bottom < 1.25) {
                     let firstPlatform = platforms[0].visual
                     firstPlatform.classList.remove('platform')
@@ -121,11 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('1', doodlerBottomSpace)
         doodlerBottomSpace += 2.5
         doodler.style.bottom = doodlerBottomSpace + 'rem'
-        if (doodlerBottomSpace > startPoint + 25) {
+        if (doodlerBottomSpace > startPoint + 20) {
             fall()
             isJumping = false
         }
-    },30)
+    },35)
 
    
 }
@@ -144,7 +149,7 @@ function moveLeft() {
        } else moveRight()
        
         
-    }, 20)
+    }, 25)
     
 }
 
@@ -159,7 +164,7 @@ function moveRight() {
             doodlerLeftSpace += 0.626
             doodler.style.left = doodlerLeftSpace + 'rem'
         } else moveLeft()
-    }, 20)
+    }, 25)
     
 }
 
@@ -202,6 +207,7 @@ function moveRight() {
     //game over
 
     function gameOver() {
+        
         console.log('game over')
         isGameOver = true
 
@@ -210,6 +216,7 @@ function moveRight() {
         }
         grid.innerHTML = `<h2 class="game-over">game oveR !</h2><h3 class="score">youR scoRe: ${score} !<h3>`
         grid.appendChild(playAgain)
+        playAgain.style.display = "block"
         clearInterval(upTimerId)
         clearInterval(downTimerId)
         clearInterval(leftTimerId)
@@ -231,7 +238,7 @@ function moveRight() {
         
         
         document.getElementById("playbutton").addEventListener('click', start)
-        grid.removeChild(playAgain)
+        
         
     }
 
@@ -244,6 +251,8 @@ function moveRight() {
         grid.removeChild(playButton)
         grid.removeChild(introPage)
         grid.removeChild(avatarSection)
+        grid.removeChild(playAgain)
+        
 
     }
     playGame()
@@ -284,25 +293,33 @@ function moveRight() {
     }
     
 
-    //playAgain.addEventListener('click', playGame())
-    //let welcomePage = document.querySelector(".welcome-page")
+    
+    
+
     let playButtonTwo = document.createElement("button")
     playButtonTwo.classList.add('playbutton')
-    playButtonTwo.innerHTML = "let's play!"
+    playButtonTwo.addEventListener('click', restartGame)
     
     
     function goToHome() { 
-            grid.innerHTML=""   
+            
+            grid.innerHTML=`
+            <div class="control-buttons">
+                <button class="left arrow-controls" ><img src="./keyboardarrow.svg" class="left-png" >   </button ><button class="straight arrow-controls"><img src="./keyboardarrow.svg" class="straight-png" >  </button ><button class="right arrow-controls" > <img src="./keyboardarrow.svg" class="right-png">    </button>`  
+            
             grid.appendChild(introPage)
             grid.appendChild(avatarSection)
-            //grid.removeChild(playAgain)
+            
             grid.appendChild(playButtonTwo)
+            playButtonTwo.innerHTML="play"
+           
             
             }
 
 
     function restartGame() {
-        grid.removeChild(playButtonTwo)
+                grid.removeChild(playButtonTwo)
+                
                 platforms = []
                 createPlatforms()
                 createDoodler()
@@ -311,15 +328,15 @@ function moveRight() {
                 score = 0
                 grid.removeChild(introPage)
                 grid.removeChild(avatarSection)
-                grid.removeChild(playAgain)
-                grid.removeChild(playButtonTwo)
+                
+                
                 
             }
     playAgain.addEventListener('click', goToHome) 
 
-    playButtonTwo.addEventListener('click', restartGame)
+    
         
-            
+       
     //score.classList.add('score')      
     
     })
