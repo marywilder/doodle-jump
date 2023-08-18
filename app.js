@@ -306,7 +306,11 @@ function moveRight() {
             grid.innerHTML=`
             <div class="control-buttons">
                 <button class="left arrow-controls" ><img src="./keyboardarrow.svg" class="left-png" >   </button ><button class="straight arrow-controls"><img src="./keyboardarrow.svg" class="straight-png" >  </button ><button class="right arrow-controls" > <img src="./keyboardarrow.svg" class="right-png">    </button>`  
+                document.querySelector(".left").addEventListener('click', moveLeft)
+
+                document.querySelector(".right").addEventListener('click', moveRight)
             
+                document.querySelector(".straight").addEventListener('click', moveStraight)
             grid.appendChild(introPage)
             grid.appendChild(avatarSection)
             
